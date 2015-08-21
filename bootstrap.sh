@@ -58,7 +58,7 @@ sudo DEBIAN_FRONTEND=noninteractive apt-get -y install git
 # install svn
 sudo DEBIAN_FRONTEND=noninteractive apt-get -y install libserf-1-1 libsvn1 subversion
 
-#install WP-CLI
+# install WP-CLI
 sudo curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
 sudo chmod +x wp-cli.phar
 sudo mv wp-cli.phar /usr/local/bin/wp
@@ -67,24 +67,27 @@ sudo mv wp-cli.phar /usr/local/bin/wp
 sudo curl -s https://getcomposer.org/installer | php
 sudo mv composer.phar /usr/local/bin/composer
 
-# install Node.js 
+# install Node.js
 sudo DEBIAN_FRONTEND=noninteractive apt-get -y install nodejs
+sudo DEBIAN_FRONTEND=noninteractive apt-get -y install nodejs-legacy
 # install npm
 sudo DEBIAN_FRONTEND=noninteractive apt-get -y install npm
+sudo npm update npm -g
 
-#install grunt
+# install grunt
 npm install -g grunt-cli
-#install bower
+# install bower
 npm install -g bower
-#install gulp
+# install gulp
 npm install -g gulp
-
+# install ionic framework
+sudo npm install -g cordova ionic
 #install yeoman
-#npm install -g yo
+sudo npm install -g yo
 #install yeoman webapp generator
-#npm install -g generator-webapp
+sudo npm install -g generator-webapp
 #install yeoman angular generator
-#npm install -g generator-angular
+sudo npm install -g generator-angular
 
 # create index.php
 sudo chmod 755 /var/www
