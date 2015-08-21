@@ -26,3 +26,5 @@ Open Vagrantfile and edit the following:
 - Npm
 - Bower
 - Grunt
+- Yeoman + generator-webapp + generator-angular
+- Ionic Framework
