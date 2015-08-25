@@ -24,7 +24,7 @@ mysql_password = "root"
 Vagrant.configure(2) do |config|
 
    config.vm.box = "ubuntu/trusty64"
-   config.vm.hostname = "local." + project_name
+   config.vm.hostname = project_name + ".local"
    config.vm.network "forwarded_port", guest: 80, host: 8080
    config.vm.network "private_network", ip: ip_address #, name: "VirtualBox Host-Only Ethernet Adapter"
    
