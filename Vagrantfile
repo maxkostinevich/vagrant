@@ -5,7 +5,7 @@
 # CONFIG
 
 # IP ADDRESS
-ip_address = "192.168.0.2"
+ip_address = "192.168.10.2"
 
 # Synced folder path
 synced_folder_path = "D:/work/www/"
