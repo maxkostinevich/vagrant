@@ -2,6 +2,8 @@
 # vi: set ft=ruby :
 
 # CONFIG
+# Dont forget to install the following plugins:
+# vagrant plugin install vagrant-vbguest
 
 # IP ADDRESS
 ip_address = "192.168.10.2"
@@ -20,15 +22,17 @@ mysql_password = "root"
 
 Vagrant.configure(2) do |config|
 
-   config.vm.box = "bento/ubuntu-16.04"
+   config.vm.box = "ubuntu/xenial64"
    config.vm.hostname = "vagrant.local"
    config.vm.network "forwarded_port", guest: 80, host: 8080
    config.vm.network "forwarded_port", guest: 22, host: 12914, id: 'ssh'
    config.vm.network "private_network", ip: ip_address #, name: "VirtualBox Host-Only Ethernet Adapter"
    
-   
-   #config.ssh.username = ssh_user
-   #config.ssh.password = ssh_password
+   #config.vm.boot_timeout = 300
+
+
+   #config.ssh.username = 'vagrant'
+   #config.ssh.password = 'vagrant'
    #config.ssh.insert_key = 'true'
    #config.ssh.private_key_path = File.expand_path("../../vagrant-ppk-dev", __FILE__)
 
@@ -38,6 +42,7 @@ Vagrant.configure(2) do |config|
    config.vm.provider "virtualbox" do |vb|
      vb.memory = "1024"
      vb.cpus = 2
+	 #vb.gui = true
    end
 
   # Define a Vagrant Push strategy for pushing to Atlas. Other push strategies
